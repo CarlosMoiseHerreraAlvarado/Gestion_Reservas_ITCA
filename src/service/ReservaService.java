@@ -75,7 +75,7 @@ public class ReservaService {
 
     public Map<TipoAula, Double> ocupacionPorTipoAula(){
         Map<TipoAula, Double> acum = new EnumMap<>(TipoAula.class);
-        // horas acumuladas por tipo de aula (denominador opcional en mejora)
+        
         for (Reserva r : reservaRepo.listar()) {
             try {
                 TipoAula t = aulaRepo.porId(r.getAulaId()).getTipo();
@@ -91,7 +91,7 @@ public class ReservaService {
     }
 
     public List<Reserva> buscarPorResponsable(String q){ return reservaRepo.buscarPorResponsable(q); }
-
+   //Lista de Servicio
     public List<Reserva> listarOrdenado(Comparator<Reserva> cmp){
         return reservaRepo.listar().stream().sorted(cmp).toList();
     }
