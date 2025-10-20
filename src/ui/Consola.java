@@ -48,7 +48,6 @@ public class Consola {
         }
     }
 
-    /* ===== AULAS ===== */
     private void menuAulas() throws Exception {
     while (true) {
         System.out.println("\n--- Aulas ---");
@@ -78,7 +77,7 @@ public class Consola {
                 }
                 break;
             case "0":
-                return; // vuelve al menú principal
+                return; 
             default:
                 System.out.println("Opción inválida.");
         }
@@ -92,13 +91,13 @@ public class Consola {
         System.out.print("ID de Aula (ej.C-100): ");
         id = sc.nextLine().trim().toUpperCase();
 
-        // 1) Formato: LETRA-GUION-NUMERO (al menos 2 dígitos). Ajusta si necesitas otro patrón.
+        
         if (!id.matches("^[A-Z]-\\d{2,}$")) {
             System.out.println("Formato inválido. Use letra-guion-número (mín. 2 dígitos). Ej: C-100, L-205, A-12");
             continue;
         }
 
-        // 2) Unicidad
+        
         if (aulaRepo.existeId(id)) {
             System.out.println("Ya existe un aula con ese ID. Intente otro.");
             continue;
@@ -137,7 +136,7 @@ public class Consola {
         System.out.println("Aula actualizada.");
     }
 
-    /* ===== RESERVAS ===== */
+    
     private void menuReservas() throws Exception {
     service.refrescarHistoricas();
     while (true) {
@@ -282,7 +281,7 @@ public class Consola {
                 r.getAulaId(), r.getResponsable(), r.duracionEnHoras(), r.getId());
     }
 
-    /* ===== REPORTES ===== */
+    
     private void menuReportes() throws IOException, PersistenciaException {
     service.refrescarHistoricas();
     while (true) {
@@ -330,5 +329,5 @@ public class Consola {
         }
     }
 }
-
+//
 }
