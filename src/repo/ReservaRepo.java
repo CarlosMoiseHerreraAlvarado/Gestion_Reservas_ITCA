@@ -65,6 +65,8 @@ public class ReservaRepo {
         } catch (IOException e){ throw new PersistenciaException("Error cargando reservas", e); }
     }
 
+    //metod aguarda
+
     private void guardar() throws PersistenciaException {
         try {
             if (!Files.exists(archivo)) Files.createFile(archivo);
