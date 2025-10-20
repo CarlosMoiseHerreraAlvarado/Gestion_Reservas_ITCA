@@ -1,0 +1,3 @@
+Distribución por Tipo de Reserva (conteo)
+CLASE -> 1
+EVENTO -> 1

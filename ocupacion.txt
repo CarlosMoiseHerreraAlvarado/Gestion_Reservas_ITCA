@@ -1,0 +1,2 @@
+Ocupación por Tipo de Aula (horas acumuladas)
+TEORICA -> 1.50 h
